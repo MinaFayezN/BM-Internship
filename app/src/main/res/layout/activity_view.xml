@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ViewActivity">
+
+        <EditText
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/first_title"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btn_hello_world"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="bottom"
+            android:text="@string/first_title" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:gravity="end|center"
+            android:text="@string/first_title"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            tools:layout_height="450dp"
+            tools:text="askjdgasd aksjghdas kajushdv asdkjasd askjdas daskjg" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:text="@string/app_name"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_background"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <!--    = @id/asdasdasldkahjsld -->
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="bottom"
+            android:text="@string/first_title" />
+
+    </LinearLayout>
+</ScrollView>
