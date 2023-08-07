@@ -1,15 +1,15 @@
 package dev.mina.internship
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import dev.mina.internship.ui.screens.MainScreen
+import dev.mina.internship.ui.screens.Profile
 import dev.mina.internship.ui.theme.BMInternshipTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,25 +22,21 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    MainScreen(::navigateToLogin)
                 }
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    BMInternshipTheme {
-        Greeting("Android")
+    private fun navigateToLogin(profile: Profile) {
+        val bundle = Bundle()
+        bundle.putParcelable("profile", profile)
+        val list = listOf(profile, profile, profile)
+        bundle.putParcelableArray("profiles", list.toTypedArray())
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
+
 }

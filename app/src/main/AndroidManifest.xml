@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +17,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BMInternship"
         tools:targetApi="31">
+        <activity
+            android:name=".SignupActivity"
+            android:exported="false"
+            android:label="@string/title_activity_signup"
+            android:theme="@style/Theme.BMInternship" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.BMInternship" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
