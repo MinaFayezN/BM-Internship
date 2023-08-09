@@ -69,11 +69,11 @@ class MainActivity : ComponentActivity() {
                             val user = User(name = username, age = age)
                             val list = mutableListOf<User>()
                             repeat(5) {
-                                userDao.addUser(user =User(name = "List name $it", age = Random.nextInt()))
+                                list.add(User(name = "List name $it", age = Random.nextInt()))
 //                                userDao.addUser(user = user)
                             }
-//                            userDao.addUserList(list)
-                            userDao.addUser(user = user)
+                            userDao.addUserList(list)
+//                            userDao.addUser(user = user)
 
                         }) {
                             Text(text = "Insert user")
