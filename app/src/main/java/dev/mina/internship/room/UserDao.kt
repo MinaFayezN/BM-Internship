@@ -37,7 +37,7 @@ interface UserDao {
     @Delete
     fun deleteUser(user: User)
 
-    @Query("DELETE FROM Users_table WHERE name =:name ")
+    @Query("DELETE FROM Users_table WHERE name = :name ")
     fun deleteUserManually(name: String)
 
 }
