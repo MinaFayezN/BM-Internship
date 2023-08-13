@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +21,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BMInternship"
         tools:targetApi="31">
+        <activity
+            android:name=".CustomActionActivity"
+            android:exported="true"
+            android:label="@string/title_activity_custom_action"
+            android:theme="@style/Theme.BMInternship">
+
+            <intent-filter>
+                <action android:name="dev.mina.internship.MY_ACTION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DialActivity"
+            android:exported="true"
+            android:label="@string/title_activity_dial"
+            android:theme="@style/Theme.BMInternship">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.DIAL" />
+
+                <data android:scheme="tel" />
+            </intent-filter>
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.SEND" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
