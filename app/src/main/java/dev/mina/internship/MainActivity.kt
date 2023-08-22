@@ -10,6 +10,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import dev.mina.internship.presentation.favourites.FavouritesScreen
 import dev.mina.internship.ui.theme.BMInternshipTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,6 +27,17 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting("Android")
+                    val navController = rememberNavController()
+
+                    // nav host and add all screens
+                    NavHost(navController = navController, startDestination = "fav") {
+                        composable("fav") {
+                            FavouritesScreen(onFirstButtonClicked = {
+                                //navigate ->
+                                navController.navigate("")
+                            })
+                        }
+                    }
                 }
             }
         }
