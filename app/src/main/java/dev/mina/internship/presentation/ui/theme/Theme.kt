@@ -1,4 +1,4 @@
-package dev.mina.internship.ui.theme
+package dev.mina.internship.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

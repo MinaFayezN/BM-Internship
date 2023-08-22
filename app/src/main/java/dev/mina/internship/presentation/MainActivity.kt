@@ -1,8 +1,9 @@
-package dev.mina.internship
+package dev.mina.internship.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -10,9 +11,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import dev.mina.internship.ui.theme.BMInternshipTheme
+import dev.mina.internship.presentation.list.ListScreen
+import dev.mina.internship.presentation.ui.theme.BMInternshipTheme
 
 class MainActivity : ComponentActivity() {
+
+    val viewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -22,7 +27,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    ListScreen(flow = viewModel.listFlow, onButtonCLicked = {
+                        // navigate
+                        viewModel.onButtonCLicked()
+                    })
+
                 }
             }
         }
